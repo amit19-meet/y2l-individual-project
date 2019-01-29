@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Ballet </title>
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Didact Gothic' rel='stylesheet'>
+     <link href='https://fonts.googleapis.com/css?family=Gilda Display' rel='stylesheet'>
+     <link href='https://fonts.googleapis.com/css?family=Cinzel Decorative' rel='stylesheet'>
+</head>
+<style type="text/css">
+  #comments{
+    position: absolute;
+    width: 400px;
+    top: 150%;
+    left: 2%;
+    font-family: 'Cinzel Decorative';
+  }
+  .card-body{
+    width: 300px;
+  }
+  body{
+    font-family: 'Didact Gothic';font-size: 22px;
+    background-image: url('/static/style.jpg');
+    background-size: cover;
+    background-repeat: repeat;
+    
+  }
+  h1{
+    position: center;
+  }
+  .nav-item{
+  color: pink;
+}
+.navbar{
+  width: 100%;
+  position: fixed;
+}
+.row{
+  position: absolute;
+  top: 70%;
+  right: 10%;
+
+}
+#p{
+  position: absolute;
+  top: 18%;
+  left: 2%;
+  font-size: 18px;
+  font-family: 'Gilda Display';
+  font-weight: normal;
+   
+  
+  
+}
+#h1{
+  font-family: 'Cinzel Decorative';
+  font-weight: bold;
+  left: 2%;
+}
+</style>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-gray">
+      <a class="navbar-brand" style="color:#342245;" "font-weight: bold;" href="/home"><h3>Dance <br> Room</h3></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" style="color:#453422;" href="/ballet">Ballet</a>
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link" style="color:#453422;" href="#">Hello</a>
+      </li>
+     
+
+    </ul>
+  </div>
+  </nav>
+
+
+<div id="p">
+  <h1 id="h1"> Ballet </h1>
+  <p>
+    Ballet is said to be a combination of choreography and art, scenic design, lighting, costume, graceful movements and usually solemn music. <br> It is an artistic dance like no other, that can be used to express different emotions or to tell a story. Traditional classical ballet dance which was choreographed with elaborate costumes and staging <br>has been replaced by the modern ballet dance styles which creates room for a variety of ballet dance forms.<br> Some forms of ballet dance include classical ballet, contemporary ballet, neoclassical ballet and post-structural ballet dance.<br><br>
+
+Just as the dance itself has experienced changes over the years, ballet shoes have too.<br> They have evolved from what they were to a more comfortable and lightweight form. <br>The new ballet shoes are built with a hard square-shaped material at the tip end of the toes to offer greater support, easy tiptoeing and restrain friction during movement. 
+
+
+  </p>
+</div>
+
+<div id="comments">
+	<h1> Leave a comment </h1>
+  <form action="/ballet" method= "POST">
+    <input type="text" name="firstname" placeholder="Name">
+    
+    <input type="text" name="comment" placeholder="Recommendations for studios where you can sign in for dance lessons, advertise your dance studio etc.">
+    <input type="submit" value="Post">
+  </form>
+  {% for comment in comments%}
+      <div class="col-sm-10">
+        <div class="card">
+            <div class="card">
+                
+                <div class="card-body">
+                  <h5 class="card-title">{{comment.name}}</h5>
+                  <h6> {{comment.comment}}</h6>
+                  
+                  
+                </div>
+              </div>
+        </div>
+      </div>
+  {% endfor%}
+
+</div>
+
+<div class="row">
+  <div class="column" >
+    <iframe id="vid" width="700" height="400" src="https://www.youtube.com/embed/zV1qLYukTH8">
+</iframe>
+    
+  </div>
+  <div class="column"> 
+    
+
+    <<img id="img" src="/static/ballet.jpg" width="350px" height="430px">
+  </div>
+</div>
+	
+
+</body>
+</html>
