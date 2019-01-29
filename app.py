@@ -17,6 +17,7 @@ def ballet_page():
         return render_template('ballet.html',  comments = i)
     else:
         name = request.form['firstname']
+
         comment= request.form['comment']
         type_dance = "ballet"
         
@@ -27,6 +28,23 @@ def ballet_page():
         i = get_all_comments("ballet")        
         return render_template('ballet.html', comments = i)
 
+@app.route('/hiphop', methods=['GET', 'POST'])
+def hiphop_page():
+    if request.method == 'GET':
+        i = get_all_comments("hiphop")     
+        return render_template('hip_hop.html',  comments = i)
+    else:
+        name = request.form['firstname']
+        
+        comment= request.form['comment']
+        type_dance = "hiphop"
+        
+
+
+        add_comment(name, comment,type_dance)
+        
+        i = get_all_comments("hiphop")        
+        return render_template('hip_hop.html', comments = i)
 @app.route('/', methods= ['GET', 'POST'])
 def signup_page():
     if request.method == 'GET':
