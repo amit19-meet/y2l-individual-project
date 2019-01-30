@@ -13,7 +13,7 @@ current_username = ''
 @app.route('/ballet', methods=['GET', 'POST'])
 def ballet_page():
     if request.method == 'GET':
-    	i = get_all_comments("ballet")     
+        i = get_all_comments("ballet")     
         return render_template('ballet.html',  comments = i)
     else:
         name = request.form['firstname']
